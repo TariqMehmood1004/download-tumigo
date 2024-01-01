@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tumigo Language</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #download-btn {
+      display: block;
+      margin: 2rem auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    #download-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="text-3xl">Welcome to Tumigo Language</h1>
+    <p class="mt-2">A powerful and simple programming language.</p>
+  </header>
+
+  <section>
+    <p class="text-lg">
+      Tumigo is a versatile programming language designed to make coding simple and enjoyable.
+      <br>
+      Download it now and start creating amazing projects!
+    </p>
+
+    <button id="download-btn">Download Tumigo Language</button>
+  </section>
+
+  <script>
+    document.getElementById('download-btn').addEventListener('click', function() {
+      var zipUrl = 'https://raw.githack.com/TariqMehmood1004/tumigo/main/tumigo.rar';
+      downloadFile(zipUrl, 'tumigo.rar');
+    });
+
+    function downloadFile(url, fileName) {
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  </script>
+</body>
+</html>

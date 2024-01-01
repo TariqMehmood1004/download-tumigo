@@ -1,82 +1,632 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tumigo Language</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tumigo Language</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
 
-    header {
-      background-color: #007BFF;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    section {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    #download-btn {
-      display: block;
-      margin: 2rem auto;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease-in-out;
-    }
-
-    #download-btn:hover {
-      background-color: #0056b3;
-    }
-  </style>
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+    <link rel="icon" type="image/x-icon" href="assets/images/Tumigo.png">
+    <style>
+        *::selection {
+            background-color: #F8E08E;
+            color: black;
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <h1 class="text-3xl">Welcome to Tumigo Language</h1>
-    <p class="mt-2">A powerful and simple programming language.</p>
-  </header>
 
-  <section>
-    <p class="text-lg">
-      Tumigo is a versatile programming language designed to make coding simple and enjoyable.
-      <br>
-      Download it now and start creating amazing projects!
-    </p>
+    <main>
+        
+        <section class="sticky">
+            <div class="max-w-lg px-4 sm:pt-24 pt-12 sm:pb-8 mx-auto text-left md:max-w-none md:text-center">
+                <div class="flex flex-row justify-center items-center">
+                    <div class='text-center py-4 px-3 hidden sm:block'>
+                        <a href="https://twitter.com/TariqMe58571569"
+                            class="bg-white border border-[#E2E8F0] hover:bg-neutral-200 text-xs font-bold py-2.5 px-4 rounded-full inline-flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill='#00acee' width="16" height="16"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                            </svg>
+                            &nbsp; &nbsp;<span> Follow on Twitter </span>
+                        </a>
+                    </div>
+    
+    
+                    <div class='text-center py-4 px-3 hidden sm:block'>
+                        <a href="https://www.instagram.com/_i_am_tariq_mehmood_/"
+                            class="bg-white border border-[#E2E8F0] hover:bg-neutral-200 text-xs font-bold py-2.5 px-4 rounded-full inline-flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-instagram" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                            </svg>
+                            &nbsp; &nbsp;<span> Follow on Instagram </span>
+                        </a>
+                    </div>
+    
+    
+                    <div class='text-center py-4 px-3 hidden sm:block'>
+                        <a href="http://github.com/TariqMehmood1004"
+                            class="bg-white border border-[#E2E8F0] hover:bg-neutral-200 text-xs font-bold py-2.5 px-4 rounded-full inline-flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-github" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                            </svg>
+                            &nbsp; &nbsp;<span> Follow on Github </span>
+                        </a>
+                    </div>
+    
+    
+    
+                    <div class='text-center py-4 px-3 hidden sm:block'>
+                        <a href="https://discord.com/channels/1189492916968755200/1189492916968755203"
+                            class="bg-white border border-[#E2E8F0] hover:bg-neutral-200 text-xs font-bold py-2.5 px-4 rounded-full inline-flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-discord" viewBox="0 0 16 16">
+                                <path
+                                    d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612" />
+                            </svg>
+                            &nbsp; &nbsp;<span> Follow on Discord </span>
+                        </a>
+                    </div>
+    
+    
+                    <div class='text-center py-4 px-3 hidden sm:block'>
+                        <a href="https://www.youtube.com/channel/UCCg95flDcqFkqyswtfdPX0g"
+                            class="bg-white border border-[#E2E8F0] hover:bg-neutral-200 text-xs font-bold py-2.5 px-4 rounded-full inline-flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-youtube" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408z" />
+                            </svg>
+                            &nbsp; &nbsp;<span> Follow on YouTube </span>
+                        </a>
+                    </div>
+    
+    
+                    <div class='text-center py-4 px-3 hidden sm:block'>
+                        <a href="https://hashnode.com/@tariq1004"
+                            class="bg-white border border-[#E2E8F0] hover:bg-neutral-200 text-xs font-bold py-2.5 px-4 rounded-full inline-flex items-center">
+                            <svg fill="#000000" width="16" height="16" viewBox="0 0 24 24" role="img"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="m22.351 8.019-6.37-6.37a5.63 5.63 0 0 0-7.962 0l-6.37 6.37a5.63 5.63 0 0 0 0 7.962l6.37 6.37a5.63 5.63 0 0 0 7.962 0l6.37-6.37a5.63 5.63 0 0 0 0-7.962zM12 15.953a3.953 3.953 0 1 1 0-7.906 3.953 3.953 0 0 1 0 7.906z" />
+                            </svg>
+                            &nbsp; &nbsp;<span> Follow on Hashnode </span>
+                        </a>
+                    </div>
+    
+    
+    
+                </div>
+    
+    
+    
+                <h1
+                    class="font-extrabold leading-10 tracking-tight text-left text-[#201515] text-center sm:leading-none text-5xl sm:text-9xl">
+                    <span class="inline md:block">Building Good </span>
+                    <span class="relative mt-2 bg-clip-text text-[#201515] md:inline-block">Software.</span>
+                </h1>
+            </div>
+    
+    
+            <div class="max-w-lg px-4 pb-24 mx-auto text-left md:max-w-none md:text-center">
+                <div class='text-center py-4 space-x-4'>
+    
+                    <button
+                        class="backdrop-blur-sm transition duration-500 ease-in-out bg-black border border-[#E2E8F0] translate-y-1 text-white hover:bg-neutral-200 hover:bg-white hover:text-black text-lg font-semibold py-3 px-6 rounded-3xl inline-flex items-center">
+                        <span id="download-btn">Download Tumigo</span>
+                    </button>
+    
+                    <button
+                        class="backdrop-blur-sm transition duration-500 ease-in-out bg-white border border-[#E2E8F0] translate-y-1 text-[#16161d] hover:bg-neutral-200 text-lg font-semibold py-3 px-6 rounded-3xl inline-flex items-center">
+                        <span> Explore Apps</span>
+                    </button>
+                </div>
+            </div>
+    
+        </section>
+    
+        <div class="text-left">
+    
+            <div class='sm:px-28'>
+                <section class="relative flex items-center w-full">
+                    <div class="relative items-center w-full px-5 mx-auto md:px-12 lg:px-16 max-w-7xl">
+                        <div class="relative flex-col items-start m-auto align-middle">
+                            <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-24">
+                                <div class="relative items-center gap-12 m-auto lg:inline-flex md:order-first">
+                                    <div class="max-w-xl text-center lg:text-left">
+                                        <div>
+    
+                                            <p class="text-3xl font-semibold tracking-tight text-[#201515] sm:text-5xl">
+                                                Space Management Software
+                                            </p>
+                                            <p class="max-w-xl mt-4 text-base tracking-tight text-gray-600">
+                                                Welcome to Tumigo, your gateway to a simpler and more powerful coding
+                                                experience. Tumigo is designed with the philosophy of making coding
+                                                accessible to all, combining ease of use with robust capabilities. Whether
+                                                you're a beginner embarking on your coding journey or an experienced
+                                                developer seeking a streamlined environment, Tumigo offers an intuitive
+                                                platform where simplicity meets functionality. With its unique features and
+                                                user-friendly interface, Tumigo empowers you to express your creativity in
+                                                code effortlessly. Join our community and explore the world of Tumigo—a
+                                                coding language that bridges the gap between simplicity and power, catering
+                                                to all levels of expertise. Let Tumigo be your companion in unlocking the
+                                                full potential of your coding endeavors.
+                                            </p>
+                                        </div>
+                                        <div class="flex justify-center gap-3 mt-10 lg:justify-start">
+                                            <a class="inline-flex items-center justify-center text-sm font-semibold text-black duration-200 hover:text-blue-500 focus:outline-none focus-visible:outline-gray-600"
+                                                href="#">
+                                                <span> Read more &nbsp; → </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-first block w-full mt-12 aspect-square lg:mt-0">
+                                    <video autoplay loop muted
+                                        class="object-cover rounded-3xl object-center w-full mx-auto bg-gray-300 lg:ml-auto "
+                                        alt="hero" src="assets/videos/promo.mp4" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+    
+            </div>
+        </div>
+    
+        <section class="mt-32 mb-32">
+            <div
+                class="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+                <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Work fast from anywhere</h5>
+                <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Stay up to date and move work forward
+                    with Flowbite on iOS & Android. Download the app today.</p>
+                <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
+                    <a href="#"
+                        class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+                        <svg class="me-3 w-7 h-7" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="apple"
+                            role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                            <path fill="currentColor"
+                                d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z">
+                            </path>
+                        </svg>
+                        <div class="text-left rtl:text-right">
+                            <div class="mb-1 text-xs">Download on the</div>
+                            <div class="-mt-1 font-sans text-sm font-semibold">Mac App Store</div>
+                        </div>
+                    </a>
+                    <a href="#"
+                        class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+                        <svg class="me-3 w-7 h-7" aria-hidden="true" focusable="false" data-prefix="fab"
+                            data-icon="google-play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="currentColor"
+                                d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z">
+                            </path>
+                        </svg>
+                        <div class="text-left rtl:text-right">
+                            <div class="mb-1 text-xs">Get in on</div>
+                            <div class="-mt-1 font-sans text-sm font-semibold">Google Play</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+    
+        </section>
+    
+        <section class="bg-white dark:bg-gray-900">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+                <div class="mx-auto max-w-screen-sm">
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Testimonials</h2>
+                    <p class="mb-8 font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Explore the whole
+                        collection of open-source web components and elements built with the utility classes from Tailwind
+                    </p>
+                </div>
+                <div class="grid mb-8 lg:mb-12 lg:grid-cols-2">
+                    <figure
+                        class="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700">
+                        <blockquote class="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Speechless with how easy this
+                                was to integrate</h3>
+                            <p class="my-4">"I recently got my hands on Flowbite Pro, and holy crap, I'm speechless with how
+                                easy this was to integrate within my application. Most templates are a pain, code is
+                                scattered, and near impossible to theme.</p>
+                            <p class="my-4">Flowbite has code in one place and I'm not joking when I say it took me a matter
+                                of minutes to copy the code, customise it and integrate within a Laravel + Vue application.
+                            </p>
+                            <p class="my-4">If you care for your time, I hands down would go with this."</p>
+                        </blockquote>
+                        <figcaption class="flex justify-center items-center space-x-3">
+                            <img class="w-9 h-9 rounded-full"
+                                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png"
+                                alt="profile picture">
+                            <div class="space-y-0.5 font-medium dark:text-white text-left">
+                                <div>Bonnie Green</div>
+                                <div class="text-sm font-light text-gray-500 dark:text-gray-400">Developer at Open AI</div>
+                            </div>
+                        </figcaption>
+                    </figure>
+                    <figure
+                        class="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 md:p-12 dark:bg-gray-800 dark:border-gray-700">
+                        <blockquote class="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Solid foundation for any project
+                            </h3>
+                            <p class="my-4">"FlowBite provides a robust set of design tokens and components based on the
+                                popular Tailwind CSS framework. From the most used UI components like forms and navigation
+                                bars to the whole app screens designed both for desktop and mobile, this UI kit provides a
+                                solid foundation for any project.</p>
+                            <p class="my-4">Designing with Figma components that can be easily translated to the utility
+                                classes of Tailwind CSS is a huge timesaver!"</p>
+                        </blockquote>
+                        <figcaption class="flex justify-center items-center space-x-3">
+                            <img class="w-9 h-9 rounded-full"
+                                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
+                                alt="profile picture">
+                            <div class="space-y-0.5 font-medium dark:text-white text-left">
+                                <div>Roberta Casas</div>
+                                <div class="text-sm font-light text-gray-500 dark:text-gray-400">Lead designer at Dropbox
+                                </div>
+                            </div>
+                        </figcaption>
+                    </figure>
+                    <figure
+                        class="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 lg:border-b-0 md:p-12 lg:border-r dark:bg-gray-800 dark:border-gray-700">
+                        <blockquote class="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Mindblowing workflow and
+                                variants</h3>
+                            <p class="my-4">"As someone who mainly designs in the browser, I've been a casual user of Figma,
+                                but as soon as I saw and started playing with FlowBite my mind was 🤯.</p>
+                            <p class="my-4">Everything is so well structured and simple to use (I've learnt so much about
+                                Figma by just using the toolkit).</p>
+                            <p class="my-4">Aesthetically, the well designed components are beautiful and will undoubtedly
+                                level up your next application."</p>
+                        </blockquote>
+                        <figcaption class="flex justify-center items-center space-x-3">
+                            <img class="w-9 h-9 rounded-full"
+                                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
+                                alt="profile picture">
+                            <div class="space-y-0.5 font-medium dark:text-white text-left">
+                                <div>Jese Leos</div>
+                                <div class="text-sm font-light text-gray-500 dark:text-gray-400">Software Engineer at
+                                    Facebook</div>
+                            </div>
+                        </figcaption>
+                    </figure>
+                    <figure
+                        class="flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-gray-200 md:p-12 dark:bg-gray-800 dark:border-gray-700">
+                        <blockquote class="mx-auto mb-8 max-w-2xl text-gray-500 dark:text-gray-400">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Efficient Collaborating</h3>
+                            <p class="my-4">"This is a very complex and beautiful set of elements. Under the hood it comes
+                                with the best things from 2 different worlds: Figma and Tailwind.</p>
+                            <p class="my-4">You have many examples that can be used to create a fast prototype for your
+                                team."</p>
+                        </blockquote>
+                        <figcaption class="flex justify-center items-center space-x-3">
+                            <img class="w-9 h-9 rounded-full"
+                                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png"
+                                alt="profile picture">
+                            <div class="space-y-0.5 font-medium dark:text-white text-left">
+                                <div>Joseph McFall</div>
+                                <div class="text-sm font-light text-gray-500 dark:text-gray-400">CTO at Google</div>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="text-center">
+                    <a href="#"
+                        class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Show
+                        more...</a>
+                </div>
+        </section>
+    
+        <div class="bg-white w-full">
+            <div class="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8">
+              <div class="relative isolate overflow-hidden bg-gray-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+                <svg viewBox="0 0 1024 1024" class="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0" aria-hidden="true">
+                  <circle cx="512" cy="512" r="512" fill="url(#759c1415-0410-454c-8f7c-9a820de03641)" fill-opacity="0.7" />
+                  <defs>
+                    <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
+                      <stop stop-color="#7775D6" />
+                      <stop offset="1" stop-color="#E935C1" />
+                    </radialGradient>
+                  </defs>
+                </svg>
+                <div class="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
+                  <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Boost your productivity.<br>Start using our app today.</h2>
+                  <p class="mt-6 text-lg leading-8 text-gray-300">Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla.</p>
+                  <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
+                    <button id="download-btn-2" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Download Tumigo</button>
+                    <a href="#" class="text-sm font-semibold leading-6 text-white">Learn more <span aria-hidden="true">→</span></a>
+                  </div>
+                </div>
+                <div class="relative mt-16 h-80 lg:mt-8">
+                  <img class="absolute left-0 top-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10" src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png" alt="App screenshot" width="1824" height="1080">
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <button id="download-btn">Download Tumigo Language</button>
-  </section>
 
-  <script>
-    document.getElementById('download-btn').addEventListener('click', function() {
-      var zipUrl = 'https://raw.githack.com/TariqMehmood1004/tumigo/main/tumigo.rar';
-      downloadFile(zipUrl, 'tumigo.rar');
-    });
+          <!-- component -->
+<div class="w-full min-h-sceen py-32">
+	<div class="w-full flex flex-col items-center">
+		<h2 class="font-bold text-5xl mt-5 tracking-tight">
+			FAQ
+		</h2>
+		<p class="text-neutral-500 text-xl mt-3">
+			Frequenty asked questions
+		</p>
+	</div>
+	<div class="grid divide-y divide-neutral-200 max-w-5xl mx-auto mt-8 px-4">
+		<div class="py-5">
+			<details class="group">
+				<summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+					<span> What is a SAAS platform?</span>
+					<span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
+</svg>
+              </span>
+				</summary>
+				<p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
+					 SAAS platform is a cloud-based software service that allows users to access
+					and use a variety of tools and functionality.
+				</p>
+			</details>
+		</div>
+		<div class="py-5">
+			<details class="group">
+				<summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+					<span> How does  billing work?</span>
+					<span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
+</svg>
+              </span>
+				</summary>
+				<p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
+					We offers a variety of billing options, including monthly and annual subscription plans,
+					as well as pay-as-you-go pricing for certain services. Payment is typically made through a credit
+					card or other secure online payment method.
+				</p>
+			</details>
+		</div>
+		<div class="py-5">
+			<details class="group">
+				<summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+					<span> Can I get a refund for my subscription?</span>
+					<span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
+</svg>
+              </span>
+				</summary>
+				<p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
+					We offers a 30-day money-back guarantee for most of its subscription plans. If you are not
+					satisfied with your subscription within the first 30 days, you can request a full refund. Refunds
+					for subscriptions that have been active for longer than 30 days may be considered on a case-by-case
+					basis.
+				</p>
+			</details>
+		</div>
+		<div class="py-5">
+			<details class="group">
+				<summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+					<span> How do I cancel my subscription?</span>
+					<span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
+</svg>
+              </span>
+				</summary>
+				<p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
+					To cancel your We subscription, you can log in to your account and navigate to the
+					subscription management page. From there, you should be able to cancel your subscription and stop
+					future billing.
+				</p>
+			</details>
+		</div>
+		<div class="py-5">
+			<details class="group">
+				<summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+					<span> Can I try this platform for free?</span>
+					<span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
+</svg>
+              </span>
+				</summary>
+				<p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
+					We offers a free trial of its  platform for a limited time. During the trial period,
+					you will have access to a limited set of features and functionality, but you will not be charged.
+				</p>
+			</details>
+		</div>
+		<div class="py-5">
+			<details class="group">
+				<summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+					<span> How do I access   documentation?</span>
+					<span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
+</svg>
+              </span>
+				</summary>
+				<p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
+					  Documentation is available on the company's website and can be accessed by
+					logging in to your account. The documentation provides detailed information on how to use the ,
+					as well as code examples and other resources.
+				</p>
+			</details>
+		</div>
+		<div class="py-5">
+			<details class="group">
+				<summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+					<span> How do I contact support?</span>
+					<span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
+</svg>
+              </span>
+				</summary>
+				<p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
+					If you need help with the platform or have any other questions, you can contact the
+					company's support team by submitting a support request through the website or by emailing
+					support@We.com.
+				</p>
+			</details>
+		</div>
+		<div class="py-5">
+			<details class="group">
+				<summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+					<span> Do you offer any discounts or promotions?</span>
+					<span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
+</svg>
+              </span>
+				</summary>
+				<p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
+					We may offer discounts or promotions from time to time. To stay up-to-date on the latest
+					deals and special offers, you can sign up for the company's newsletter or follow it on social media.
+				</p>
+			</details>
+		</div>
+		<div class="py-5">
+			<details class="group">
+				<summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+					<span> How do we compare to other similar services?</span>
+					<span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
+</svg>
+              </span>
+				</summary>
+				<p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
+					 This platform is a highly reliable and feature-rich service that offers a wide range
+					of tools and functionality. It is competitively priced and offers a variety of billing options to
+					suit different needs and budgets.
+				</p>
+			</details>
+		</div>
+	</div>
+</div>
 
-    function downloadFile(url, fileName) {
-      var a = document.createElement('a');
-      a.href = url;
-      a.download = fileName;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    }
-  </script>
+<!-- component -->
+<!-- <div class="flex min-h-screen items-center justify-center absolute top-0 left-0 w-full bg-gray-100">
+  <div class="w-[10rem] rounded-lg bg-gray-50 px-16 py-14">
+    <div class="flex justify-center">
+      <div class="rounded-full bg-green-200 p-6">
+        <div class="flex h-16 w-16 items-center justify-center rounded-full bg-green-500 p-4">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-8 w-8 text-white">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <h3 class="my-4 text-center text-3xl font-semibold text-gray-700">Thanks for downloading Tumigo!</h3>
+    <p class="w-[20rem] text-center font-normal text-gray-600">Explore Tumigo: Simple. Powerful. Creative. Join us to revolutionize your coding journey. Unlock the potential, simplify your projects. Tumigo—a language for everyone.</p>
+    <button class="mx-auto mt-10 block rounded-xl border-4 border-transparent bg-orange-400 px-6 py-3 text-center text-base font-medium text-orange-100 outline-8 hover:outline hover:duration-300">Close</button>
+  </div>
+</div> -->
+
+
+<!-- component -->
+<footer class="bg-white dark:bg-gray-900">
+    <div class="container px-6 py-12 mx-auto">
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
+            <div class="sm:col-span-2">
+                <h1 class="max-w-lg text-xl font-semibold tracking-tight text-gray-800 xl:text-2xl dark:text-white">Subscribe our newsletter to get update.</h1>
+
+                <div class="flex flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row">
+                    <input id="email" type="text" class="px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300" placeholder="Email Address">
+            
+                    <button class="w-full px-6 py-2.5 text-sm font-medium tracking-wider text-white transition-colors duration-300 transform md:w-auto md:mx-4 focus:outline-none bg-gray-800 rounded-lg hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+
+            <div>
+                <p class="font-semibold text-gray-800 dark:text-white">Quick Link</p>
+
+                <div class="flex flex-col items-start mt-5 space-y-2">
+                    <a href="#" class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Home</a>
+                    <a href="#" class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Who We Are</a>
+                    <a href="#" class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Our Philosophy</a>
+                </div>
+            </div>
+
+            <div>
+                <p class="font-semibold text-gray-800 dark:text-white">Industries</p>
+
+                <div class="flex flex-col items-start mt-5 space-y-2">
+                    <a href="#" class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Retail & E-Commerce</a>
+                    <a href="#" class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Information Technology</a>
+                    <a href="#" class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Finance & Insurance</a>
+                </div>
+            </div>
+        </div>
+        
+        <hr class="my-6 border-gray-200 md:my-8 dark:border-gray-700">
+        
+        <div class="flex items-center justify-between">
+            <a href="/index.html">
+                <img class="w-10 h-10" src="assets/images/Tumigo.png" alt="">
+            </a>
+            
+            <div class="flex -mx-2">
+                <a href="https://discord.com/channels/1189492916968755200/1189492916968755203" class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400" aria-label="Reddit">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C21.9939 17.5203 17.5203 21.9939 12 22ZM6.807 10.543C6.20862 10.5433 5.67102 10.9088 5.45054 11.465C5.23006 12.0213 5.37133 12.6558 5.807 13.066C5.92217 13.1751 6.05463 13.2643 6.199 13.33C6.18644 13.4761 6.18644 13.6229 6.199 13.769C6.199 16.009 8.814 17.831 12.028 17.831C15.242 17.831 17.858 16.009 17.858 13.769C17.8696 13.6229 17.8696 13.4761 17.858 13.33C18.4649 13.0351 18.786 12.3585 18.6305 11.7019C18.475 11.0453 17.8847 10.5844 17.21 10.593H17.157C16.7988 10.6062 16.458 10.7512 16.2 11C15.0625 10.2265 13.7252 9.79927 12.35 9.77L13 6.65L15.138 7.1C15.1931 7.60706 15.621 7.99141 16.131 7.992C16.1674 7.99196 16.2038 7.98995 16.24 7.986C16.7702 7.93278 17.1655 7.47314 17.1389 6.94094C17.1122 6.40873 16.6729 5.991 16.14 5.991C16.1022 5.99191 16.0645 5.99491 16.027 6C15.71 6.03367 15.4281 6.21641 15.268 6.492L12.82 6C12.7983 5.99535 12.7762 5.993 12.754 5.993C12.6094 5.99472 12.4851 6.09583 12.454 6.237L11.706 9.71C10.3138 9.7297 8.95795 10.157 7.806 10.939C7.53601 10.6839 7.17843 10.5422 6.807 10.543ZM12.18 16.524C12.124 16.524 12.067 16.524 12.011 16.524C11.955 16.524 11.898 16.524 11.842 16.524C11.0121 16.5208 10.2054 16.2497 9.542 15.751C9.49626 15.6958 9.47445 15.6246 9.4814 15.5533C9.48834 15.482 9.52348 15.4163 9.579 15.371C9.62737 15.3318 9.68771 15.3102 9.75 15.31C9.81233 15.31 9.87275 15.3315 9.921 15.371C10.4816 15.7818 11.159 16.0022 11.854 16C11.9027 16 11.9513 16 12 16C12.059 16 12.119 16 12.178 16C12.864 16.0011 13.5329 15.7863 14.09 15.386C14.1427 15.3322 14.2147 15.302 14.29 15.302C14.3653 15.302 14.4373 15.3322 14.49 15.386C14.5985 15.4981 14.5962 15.6767 14.485 15.786V15.746C13.8213 16.2481 13.0123 16.5208 12.18 16.523V16.524ZM14.307 14.08H14.291L14.299 14.041C13.8591 14.011 13.4994 13.6789 13.4343 13.2429C13.3691 12.8068 13.6162 12.3842 14.028 12.2269C14.4399 12.0697 14.9058 12.2202 15.1478 12.5887C15.3899 12.9572 15.3429 13.4445 15.035 13.76C14.856 13.9554 14.6059 14.0707 14.341 14.08H14.306H14.307ZM9.67 14C9.11772 14 8.67 13.5523 8.67 13C8.67 12.4477 9.11772 12 9.67 12C10.2223 12 10.67 12.4477 10.67 13C10.67 13.5523 10.2223 14 9.67 14Z">
+                        </path>
+                    </svg>
+                </a>
+
+
+
+                <a href="https://www.instagram.com/_i_am_tariq_mehmood_/" class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5 bi bi-instagram" viewBox="0 0 16 16">
+                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                      </svg>
+                </a>
+
+                <a href="http://github.com/TariqMehmood1004" class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400" aria-label="Github">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.026 2C7.13295 1.99937 2.96183 5.54799 2.17842 10.3779C1.395 15.2079 4.23061 19.893 8.87302 21.439C9.37302 21.529 9.55202 21.222 9.55202 20.958C9.55202 20.721 9.54402 20.093 9.54102 19.258C6.76602 19.858 6.18002 17.92 6.18002 17.92C5.99733 17.317 5.60459 16.7993 5.07302 16.461C4.17302 15.842 5.14202 15.856 5.14202 15.856C5.78269 15.9438 6.34657 16.3235 6.66902 16.884C6.94195 17.3803 7.40177 17.747 7.94632 17.9026C8.49087 18.0583 9.07503 17.99 9.56902 17.713C9.61544 17.207 9.84055 16.7341 10.204 16.379C7.99002 16.128 5.66202 15.272 5.66202 11.449C5.64973 10.4602 6.01691 9.5043 6.68802 8.778C6.38437 7.91731 6.42013 6.97325 6.78802 6.138C6.78802 6.138 7.62502 5.869 9.53002 7.159C11.1639 6.71101 12.8882 6.71101 14.522 7.159C16.428 5.868 17.264 6.138 17.264 6.138C17.6336 6.97286 17.6694 7.91757 17.364 8.778C18.0376 9.50423 18.4045 10.4626 18.388 11.453C18.388 15.286 16.058 16.128 13.836 16.375C14.3153 16.8651 14.5612 17.5373 14.511 18.221C14.511 19.555 14.499 20.631 14.499 20.958C14.499 21.225 14.677 21.535 15.186 21.437C19.8265 19.8884 22.6591 15.203 21.874 10.3743C21.089 5.54565 16.9181 1.99888 12.026 2Z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </main>
+
+      
+    <script>
+        
+        document.getElementById('download-btn').addEventListener('click', function () {
+            var zipUrl = 'https://raw.githack.com/TariqMehmood1004/tumigo/main/tumigo.rar';
+            downloadFile(zipUrl, 'tumigo.rar');
+        });
+
+        document.getElementById('download-btn-2').addEventListener('click', function () {
+            var zipUrl = 'https://raw.githack.com/TariqMehmood1004/tumigo/main/tumigo.rar';
+            downloadFile(zipUrl, 'tumigo.rar');
+        });
+
+        function downloadFile(url, fileName) {
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = fileName;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
 </body>
+
 </html>

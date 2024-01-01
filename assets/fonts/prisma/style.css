@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'prisma';
+  src: url('/path-to/prisma.woff2') format('woff2'),
+       url('/path-to/prisma.woff') format('woff'),
+       url('/path-to/prisma.ttf')  format('truetype');
+}
+
+body {
+  font-family: 'prisma', sans-serif;
+}

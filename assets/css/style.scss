@@ -1,0 +1,89 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Lobster&family=Monoton&family=Notable&family=Oleo+Script:wght@400;700&family=Open+Sans:wght@300;400;500;600&family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap');
+
+$primary-color: #A4DBE8;
+$secondary-color: #000;
+$light-yellow: #F8E08E;
+$light-color: #FFF;
+
+@font-face {
+    font-family: 'prisma';
+    src: url('/path-to/prisma.woff2') format('woff2'),
+         url('/path-to/prisma.woff') format('woff'),
+         url('/path-to/prisma.ttf')  format('truetype');
+  }
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body , html {
+    width: 100%;
+    height: 100%;
+    background-color: $light-color;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: $light-yellow;
+}
+.home-downloader {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 1rem 15rem;
+}
+.promo {
+    color: $secondary-color;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.promo p {
+    font-size: 4.5rem;
+    font-weight: 900;
+    font-family: 'prisma', sans-serif;
+    line-height: 4.999999rem;
+}
+
+.promo-video {
+    width: 40%;
+    max-height: 100%;
+    position: relative;
+    top: 0;
+    right: 0;
+    border-radius: 2rem;
+    padding: 0rem;
+    overflow: hidden;
+
+    video {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 16/9;
+        filter: blur(2px);
+    }
+
+    #download-btn {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(-50%, 50%);
+    }
+}
